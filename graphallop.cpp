@@ -1,5 +1,22 @@
+/*
+Program Written by :- Hemant Kumar Mangwani on 22/07/17
+Here you can find the following operation of graph
+GRAPH.....\n Enter Your Choice \n 1.Adjacent Matrix\n 2.Adjacent List\n 3.BFS\n 4.DFS
+
+For more reference  for theory 
+http://www.geeksforgeeks.org/graph-and-its-representations/
+http://www.geeksforgeeks.org/breadth-first-traversal-for-a-graph/
+http://www.geeksforgeeks.org/depth-first-traversal-for-a-graph/
+
+For more reference  for questions
+https://www.hackerearth.com/practice/algorithms/graphs/breadth-first-search/tutorial/
+https://www.hackerearth.com/practice/algorithms/graphs/depth-first-search/tutorial/
+HAPPY CODING..... :) 
+*/
 #include<bits/stdc++.h>
 using namespace std;
+//Adjacency Matrix 
+//for more detials refer to http://www.geeksforgeeks.org/graph-and-its-representations/
 void am()
 {
  int n,e,i,j;
@@ -21,6 +38,8 @@ void am()
  cout<<endl;
  }
 }
+//Adjacency List
+//for more detials refer to http://www.geeksforgeeks.org/graph-and-its-representations/
 void al()
 {
 vector <int> a[10];
@@ -44,6 +63,10 @@ for(i=1;i<n;i++)
     cout<<endl;
  }
 }
+
+//Breadth First Traversal or BFS for a Graph
+//http://www.geeksforgeeks.org/breadth-first-traversal-for-a-graph/
+
 void bfs()
 {
 vector <int> a[10];
@@ -79,6 +102,10 @@ while(!q.empty())
 }
 
 }
+
+//Depth First Traversal or DFS for a Graph
+//http://www.geeksforgeeks.org/depth-first-traversal-for-a-graph/
+
 void dfs()
 {
 vector <int> a[10];
