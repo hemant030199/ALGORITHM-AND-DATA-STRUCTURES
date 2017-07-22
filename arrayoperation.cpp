@@ -1,3 +1,17 @@
+/*
+Program Written by :- Hemant Kumar Mangwani on 22/07/17
+Here you can find the following operation of stack
+  1.push 2.pop 3.dispaly
+For more reference  for theory 
+http://www.geeksforgeeks.org/linear-search/
+For more reference  for questions
+https://www.hackerearth.com/practice/data-structures/arrays/1-d/tutorial/
+https://www.hackerearth.com/practice/algorithms/searching/linear-search/tutorial/https://www.hackerearth.com/practice/algorithms/searching/linear-search/tutorial/
+https://www.hackerearth.com/practice/algorithms/searching/binary-search/tutorial/
+HAPPY CODING..... :) 
+*/
+
+
 #include<bits/stdc++.h>
 using namespace std;
 int lsearch(int key,int a[],int n)

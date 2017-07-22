@@ -1,3 +1,16 @@
+/*
+Program Written by :- Hemant Kumar Mangwani on 22/07/17
+Here you can find the following operation of stack
+  1.push 2.pop 3.dispaly
+For more reference  for theory 
+http://www.geeksforgeeks.org/stack-data-structure/
+http://www.cplusplus.com/reference/stack/stack/
+For more reference  for questions
+https://www.hackerearth.com/practice/data-structures/stacks/basics-of-stacks/tutorial/
+HAPPY CODING..... :) 
+*/
+
+
 #include<stdio.h>
 #include<stdlib.h>
 #define SIZE 10
