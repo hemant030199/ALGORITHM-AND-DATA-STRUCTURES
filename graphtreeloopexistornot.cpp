@@ -1,6 +1,9 @@
 
 /*
 Program Written by :- Hemant Kumar Mangwani on 24/07/17
+Here we are finding that in a directed graph or tree a loop exist or not  we can simply
+do it by checking taak a loop enters in else part when we are searching the connected
+edges with any node . Here i taken the help of bfs algo u can also do it by dfs
 HAPPY CODING..... :)
 */
 
