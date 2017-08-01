@@ -39,6 +39,26 @@ node* insert(node* root, int key,ll c)
     return root;
 }
 
+
+/* void bfs(node* root) {
+	if (root == NULL) {
+		return;
+	}
+	queue <node*> q;
+	q.push(root);
+	while (!q.empty()) {
+		node *current = q.front();
+		cout<<current->info<<" ";
+		q.pop();
+		if (current->left != NULL) {
+			q.push(current->left);
+		}
+		if (current->right != NULL) {
+			q.push(current->right);
+		}
+	}
+}  */
+
 void printLevelOrder(node *root)
 {
 
