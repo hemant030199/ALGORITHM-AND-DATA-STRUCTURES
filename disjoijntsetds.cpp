@@ -1,29 +1,38 @@
-#include<bits/stdc++.h>
+/*
+
+Written  by:- Hemant Kumar Mangwani on 03/08/17
+references :-
+ https://www.hackerearth.com/practice/data-structures/disjoint-data-strutures/basics-of-disjoint-data-structures/tutorial/
+ http://www.geeksforgeeks.org/union-find/
+ http://www.geeksforgeeks.org/union-find-algorithm-set-2-union-by-rank/
+https://www.youtube.com/watch?v=ID00PMy0-vE&t=5s
+https://www.youtube.com/watch?v=mHz-mx-8lJ8
+*/
+
+
+#include <bits/stdc++.h>
 using namespace std;
-#define ll long long
-int arr[10000],Size[10000];
-
-//initilization of the elements int the nodes and size
-void init(int n)
+int arr[10000];
+void init(int n, int Size[])
 {
-   for(int i=0;i<n;i++)
-   {
-       arr[i]=i;
-       Size[i]=1;
-   }
+for(int i = 1; i<n; i++)
+{
+arr[i] = i;
+Size[i] = 1;
 }
-
+}
 int root(int i)
 {
-    while(arr[i]!=i)
-    {
-        arr[i]=arr[arr[i]];
-        i=arr[i];
-    }
-    return i;
+//using path compression
+while(arr[i]!=i)
+{
+arr[i] = arr[arr[i]];
+i = arr[i];
 }
-
-void unions(int a, int b)
+return i;
+}
+//union with path compression
+void weighted_union(int a, int b, int Size[])
 {
 int root_a = root(a);
 int root_b = root(b);
@@ -42,70 +51,33 @@ Size[root_a] += Size[root_b];
 Size[root_b] = 0;
 }
 }
-
-bool find(int a,int b)
+void printAns(int a1[], int n)
 {
-    if(root(a)==root(b))
-        return true;
-    else
-        return false;
-}
-
-void printans(int n)
+int a[n+1];
+for(int i = 0; i<=n; i++)
 {
-    int a1[1001];
-    copy_n ( arr, n, a1 );
-
-
-    for(int i=0;i<n;i++)
-    {
-        if(a1[i]>0&&a1[i]<1001)
-        {
-            cout<<a1[i]<<" ";
-        }
-    }
+a[i] = a1[i];
 }
-
+sort(a, a+n+1);
+for(int it = 1; it<n; it++)
+{
+if(a[it]>0 && a[it]<1001)
+cout<<a[it]<<" ";
+}
+cout<<endl;
+}
 int main()
 {
-    ll n,e;
-    cout<<"\nEnter no of node\n";
-    cin>>n;
-    init(n);
-
-    cout<<"\nNo of edges\n";
-    cin>>e;
-
-    while(e--)
-    {
-        int a,b;
-        cout<<"\nEnter the edges b/w a and b";
-        cin>>a>>b;
-        unions(a,b);
-        printans(n);
-        cout<<"\n";
-    }
-
-    //enter no of queries
-    cout<<"\nenter no of queries=\n";
-    ll q;
-    cin>>q;
-
-    while(q--)
-    {
-        bool ans;
-        int a,b;
-        cout<<"\mFind the edge b/w= ";
-        cin>>a>>b;
-        ans=find(a,b);
-        if(ans==1)
-            cout<<"\nWe can't add this edge by this edge will produced  cycle  \n";
-        else
-            cout<<"\nWe can add this edge by this edge will not produced cycle\n";
-    }
-
-    //this will print the no of nodes have sizze more then 1
-    printans(n);
-
-    return 0;
+int n, m;
+cin>>n>>m;
+int Size[n+1];
+init(n+1, Size);
+while(m--)
+{
+int x, y;
+cin>>x>>y;
+weighted_union(x, y, Size);
+printAns(Size, n+1);
+}
+return 0;
 }
