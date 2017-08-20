@@ -4,12 +4,12 @@
 using namespace std;
 #define speed ios_base::sync_with_stdio(0)
 #define endl "\n"
-#define MAX 1000000001
+#define MAX 10001
+ll dist[MAX][MAX];
 int main()
 {
     ll n,e,i,j,k;
     cin>>n>>e;
-    ll dist[n][n];
     for(i=1;i<=n;i++)
         {
           for(j=1;j<=n;j++)
@@ -17,6 +17,7 @@ int main()
               dist[i][j]=MAX;
           }
         }
+
     for(i=0;i<e;i++)
     {
         ll f,t,c;
