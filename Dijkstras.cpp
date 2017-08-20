@@ -5,10 +5,10 @@ using namespace std;
 #define speed ios_base::sync_with_stdio(0)
 #define endl "\n"
 
-vector<pair<ll,ll>>adj[1000001];
+vector<pair<ll,ll>>adj[100001];
 ll c=1000000000;
-bool visited[1000001];
-ll dist[1000001];
+bool visited[100001];
+ll dist[100001];
 
 void intilization(ll n)
 {
@@ -66,7 +66,7 @@ int main()
         cout<<visited[i]<<" ";
     }
    cout<<endl;
-    for(i=2;i<=nodes;i++)
+    for(i=1;i<=nodes;i++)
     {
         cout<<dist[i]<<" ";
     }
